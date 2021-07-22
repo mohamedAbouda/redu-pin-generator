@@ -18,6 +18,14 @@
     export default {
         mounted() {
             console.log('Component mounted.')
+             axios.post('generate-pin')
+                .then((response)=>{
+                    this.$swal('Hello Vue world!!!');
+                console.log(response)
+                })
+                .catch((error)=>{
+                    console.log(error)
+                });
         }
     }
 </script>

@@ -23,5 +23,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('generate', function () {
     return view('generate-pin');
-});
+})->middleware('auth')->name('generate-page');
 
+Route::post('generate-pin', 'App\Http\Controllers\Apis\PinController@generate');
