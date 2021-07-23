@@ -17,7 +17,7 @@ class PinController extends Controller
 
     public function generate()
     {
-        $x = $this->pinLibrary->generate();
-        return $x;
+        $pin = $this->pinLibrary->generate();
+        return $this->makeResponse($pin);
     }
 }
